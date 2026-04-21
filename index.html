@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantUML Diagram Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PlantUML Diagram Generator</h1>
+            <p>Создайте диаграмму и экспортируйте для Umbrello</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="editor-section">
+                <h2>PlantUML Код</h2>
+                <textarea id="plantuml-code" placeholder="Введите PlantUML код здесь...">@startuml
+class User {
+  +String name
+  +String email
+  +login()
+  +logout()
+}
+
+class Product {
+  +String title
+  +Double price
+  +getDetails()
+}
+
+User --> Product : purchases
+@enduml</textarea>
+                <div class="button-group">
+                    <button id="render-btn" class="btn btn-primary"><span>Создать диаграмму</span></button>
+                    <button id="export-btn" class="btn btn-secondary"><span>Экспортировать</span></button>
+                </div>
+            </div>
+            
+            <div class="preview-section">
+                <h2>Предпросмотр</h2>
+                <div id="diagram-preview">
+                    <p class="placeholder">Нажмите "Создать диаграмму" для предпросмотра</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
